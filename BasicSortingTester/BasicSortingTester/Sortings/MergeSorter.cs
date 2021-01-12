@@ -11,7 +11,7 @@ namespace BasicSortingTester.Sortings
                 input[i] = sorted[i];
         }
 
-        public T[] DivideAndRule(T[] input)
+        private T[] DivideAndRule(T[] input)
         {
             if (input.Length < 2)
                 return input;
@@ -28,10 +28,10 @@ namespace BasicSortingTester.Sortings
             left = DivideAndRule(left);
             right = DivideAndRule(right);
 
-            return Merge(left, right);
+            return CompairingMerge(left, right);
         }
 
-        private T[] Merge(T[] left, T[] right)
+        private T[] CompairingMerge(T[] left, T[] right)
         {
             T[] result = new T[left.Length + right.Length];
             int leftIndex = 0;
